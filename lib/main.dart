@@ -4,9 +4,16 @@ import 'package:untitled/ui/checkoutPage/checkout_page.dart';
 import 'package:untitled/ui/detail/detail.dart';
 import 'package:untitled/ui/login/login%20page.dart';
 import 'package:untitled/ui/productList/productListScreen.dart';
+import 'package:untitled/ui/categoryList/home_screen.dart';
+import 'package:provider/provider.dart';
+import 'ui/categoryList/providers/category_provider.dart';
+import 'package:flutter/services.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  runApp(ChangeNotifierProvider(create: (context) => CategoryProvider(), child: const MyApp()),);
 }
 
 class MyApp extends StatelessWidget {
@@ -27,6 +34,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: LoginPage.id,
       routes: {
+        HomePage.id : (context) => const HomePage(),
         LoginPage.id: (context) =>const LoginPage(),
         ProductListScreen.id: (context) =>ProductListScreen(constants.productList),
         DetailScreen.id: (context) => const DetailScreen(),

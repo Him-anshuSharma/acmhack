@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:model_viewer_plus/model_viewer_plus.dart';
-import 'package:untitled/ui/productList/productListScreen.dart';
+import 'package:untitled/ui/categoryList/home_screen.dart';
 
 class LoginPage extends StatelessWidget {
   static String id = "LoginPage";
@@ -11,7 +11,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFEEEDEB),
+      backgroundColor: const Color(0xFFEEEDEB),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
 
@@ -33,7 +33,7 @@ class LoginPage extends StatelessWidget {
               fontSize: 20,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           const Text(
             "Room decor and furniture through AR",
             style: TextStyle(
@@ -41,7 +41,7 @@ class LoginPage extends StatelessWidget {
               fontSize: 15,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 120,
           ),
           const Text(
@@ -59,7 +59,7 @@ class LoginPage extends StatelessWidget {
                 left: 100, right: 100, top: 20, bottom: 20),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, ProductListScreen.id);
+                Navigator.pushNamed(context, HomePage.id);
               },
               style: ElevatedButton.styleFrom(
                   elevation: 20,
