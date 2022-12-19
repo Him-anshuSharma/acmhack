@@ -8,12 +8,18 @@ import 'package:untitled/ui/categoryList/home_screen.dart';
 import 'package:provider/provider.dart';
 import 'ui/categoryList/providers/category_provider.dart';
 import 'package:flutter/services.dart';
+import 'ui/checkoutPage/providers/cart_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-  runApp(ChangeNotifierProvider(create: (context) => CategoryProvider(), child: const MyApp()),);
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (_) => CategoryProvider()),
+      ChangeNotifierProvider(create: (_) => CartProvider()),
+    ],
+    child: const MyApp()),);
 }
 
 class MyApp extends StatelessWidget {

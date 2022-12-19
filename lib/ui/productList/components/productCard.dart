@@ -18,7 +18,6 @@ class ProductCard extends StatelessWidget {
           Navigator.pushNamed(context, DetailScreen.id);
         },
         child: Card(
-
           color: const Color(0xffcffff),
           margin: const EdgeInsets.all(10),
           elevation: 3,
@@ -67,7 +66,7 @@ class ProductCard extends StatelessWidget {
                       children: [
                         Text(
                           "\$ ${product.price}",
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                         Container(
