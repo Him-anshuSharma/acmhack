@@ -6,7 +6,6 @@ import 'package:untitled/ui/productList/components/productCard.dart';
 import '../../model/productListModel/product.dart';
 
 class ProductListScreen extends StatefulWidget {
-
   static String id = "ProductListScreen";
   List<Product> productList;
 
@@ -22,14 +21,14 @@ class ProductListScreenState extends State<ProductListScreen> {
 
   @override
   Widget build(BuildContext context) {
-    productList.add(Product());
-    productList.add(Product());
-    productList.add(Product());
-    productList.add(Product());
-    productList.add(Product());
-    productList.add(Product());
-    productList.add(Product());
-    productList.add(Product());
+    // productList.add(Product());
+    // productList.add(Product());
+    // productList.add(Product());
+    // productList.add(Product());
+    // productList.add(Product());
+    // productList.add(Product());
+    // productList.add(Product());
+    // productList.add(Product());
     return Scaffold(
       backgroundColor: const Color(0xffeeedeb),
       appBar: AppBar(
