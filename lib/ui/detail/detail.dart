@@ -8,22 +8,21 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: const Color(0xFFFCFFFF),
+    return Scaffold(
+      backgroundColor: const Color(0xFFFCFFFF),
       appBar: AppBar(
         backgroundColor: const Color(0xFFFCFFFF),
         leading: Padding(
-          padding: const EdgeInsets.only(left: 20),
-          child: GestureDetector(
-            onTap: (){
-              Navigator.pop(context);
-            },
-            child: const Icon(
-              Icons.arrow_back_ios_new_outlined,
-              color: Color(0xFFCC7677),
-            ),
-          )
-        ),
-        
+            padding: const EdgeInsets.only(left: 20),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: const Icon(
+                Icons.arrow_back_ios_new_outlined,
+                color: Color(0xFFCC7677),
+              ),
+            )),
         actions: const [
           Icon(Icons.favorite_border_outlined, color: Color(0xFFCC7677)),
           SizedBox(
@@ -42,11 +41,11 @@ class DetailScreen extends StatelessWidget {
             Container(
               height: MediaQuery.of(context).size.height * 0.51,
               child: ModelViewer(
-                src: 'assets/chair.glb',
+                src: 'assets/chair2.glb',
                 alt: "A 3D model of an astronaut",
                 ar: true,
                 autoRotate: true,
-                backgroundColor:  const Color(0xFFFCFFFF),
+                backgroundColor: const Color(0xFFFCFFFF),
                 cameraControls: true,
                 arPlacement: ArPlacement.floor,
               ),
@@ -58,10 +57,13 @@ class DetailScreen extends StatelessWidget {
             ),
             const SizedBox(
               height: 10,
-            ),Text(
+            ),
+            Text(
               "#Bestseller",
-              style:
-                  GoogleFonts.lato(fontWeight: FontWeight.bold, fontSize: 14,color: Colors.amber),
+              style: GoogleFonts.lato(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                  color: Colors.amber),
             ),
             const SizedBox(
               height: 10,
@@ -69,7 +71,8 @@ class DetailScreen extends StatelessWidget {
             Text(
                 "Comfortable office chair upholstered in black bonded leather;Padded seat and back for all-day upholstered in black bonded leather;Padded seat and back for all-day comfort; Pneumatic seat-height adjustment",
                 style: GoogleFonts.lato(
-                    fontWeight: FontWeight.w300, fontSize: 14)),const SizedBox(
+                    fontWeight: FontWeight.w300, fontSize: 14)),
+            const SizedBox(
               height: 20,
             ),
             Text(
@@ -87,11 +90,33 @@ class DetailScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
-                  children: [Text("₹400.00",style:
-                  GoogleFonts.lato(fontWeight: FontWeight.w900, fontSize: 20,)), 
-                  Text("IN STOCK",style:GoogleFonts.lato(fontWeight: FontWeight.w400, fontSize: 14,color: Color(0xFFCC7677),))],
+                  children: [
+                    Text("₹400.00",
+                        style: GoogleFonts.lato(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 20,
+                        )),
+                    Text("IN STOCK",
+                        style: GoogleFonts.lato(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xFFCC7677),
+                        ))
+                  ],
                 ),
-                SizedBox(height: 50,width: 150,child: ElevatedButton(onPressed: () {}, child: Text("ADD TO CART",style: GoogleFonts.lato(),),style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFCC7677),),))
+                SizedBox(
+                    height: 50,
+                    width: 150,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        "ADD TO CART",
+                        style: GoogleFonts.lato(),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFFCC7677),
+                      ),
+                    ))
               ],
             ),
             SizedBox(
