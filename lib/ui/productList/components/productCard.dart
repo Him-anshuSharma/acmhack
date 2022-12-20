@@ -14,7 +14,7 @@ class ProductCard extends StatelessWidget {
     return SizedBox(
       height: 200,
       child: GestureDetector(
-        onTap: (){
+        onTap: () {
           Navigator.pushNamed(context, DetailScreen.id);
         },
         child: Card(
@@ -29,9 +29,9 @@ class ProductCard extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(8.0),
-                child: Image.network(
+                child: Image.asset(
                   fit: BoxFit.fitHeight,
-                  product.image,
+                  product.image!,
                   height: 150.0,
                 ),
               ),
@@ -45,7 +45,7 @@ class ProductCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          product.name,
+                          product.name!,
                           style: const TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
@@ -53,7 +53,7 @@ class ProductCard extends StatelessWidget {
                           height: 5,
                         ),
                         Text(
-                          product.description,
+                          product.description!,
                           style: const TextStyle(
                               fontSize: 16,
                               color: Colors.black45,
@@ -77,7 +77,7 @@ class ProductCard extends StatelessWidget {
                             },
                             style: TextButton.styleFrom(
                               backgroundColor:
-                              const Color(0xFF967A76), // Background Color
+                                  const Color(0xFF967A76), // Background Color
                             ),
                             child: const Text(
                               'BUY',

@@ -3,13 +3,15 @@ import 'package:flutter/foundation.dart';
 import 'package:untitled/ui/categoryList/data/category_data.dart';
 
 class CategoryProvider extends ChangeNotifier {
-
   List<Categories> availableCategories = [
-   Sofa, Desk, Bed, PhotoFrames, Runner, Chair,
+    Sofa,
+    Desk,
+    Bed,
+    PhotoFrames,
+    Runner,
   ];
 
-  List<Categories> getAvailableCategories(){
+  List<Categories> getAvailableCategories() {
     return availableCategories;
   }
-
 }
