@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/constants/constants.dart';
+
 import 'package:untitled/ui/checkoutPage/checkout_page.dart';
 import 'package:untitled/ui/detail/detail.dart';
 import 'package:untitled/ui/login/login%20page.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.brown,
       ),
       initialRoute: LoginPage.id,
+      
       routes: {
         HomePage.id : (context) => const HomePage(),
         LoginPage.id: (context) =>const LoginPage(),
@@ -47,5 +49,5 @@ class MyApp extends StatelessWidget {
         CheckoutPage.id: (context) => const CheckoutPage()
       },
     );
-  }
+  } 
 }

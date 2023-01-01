@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled/ui/checkoutPage/providers/cart_provider.dart';
+import 'package:pay/pay.dart';
 
 int totalSum = CartProvider().getTotal();
 
@@ -14,13 +15,14 @@ class CheckoutPage extends StatefulWidget {
 }
 
 class _CheckoutPageState extends State<CheckoutPage> {
+  final paymentItems = <PaymentItem>[PaymentItem(amount: totalSum.toString(),label: "Total",status: PaymentItemStatus.final_price)];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 0,
       ),
-      backgroundColor: const Color(0xFFEEEDEB),
+      backgroundColor: const Color(0xFFEEEDEB), 
       body: Column(
         children: <Widget>[
           const SizedBox(
@@ -214,26 +216,16 @@ class _CheckoutPageState extends State<CheckoutPage> {
                         fontSize: 20,
                       ),
                     ),
-                    ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Color(0xFFCC7677)),
-                        foregroundColor:
-                            MaterialStateProperty.all<Color>(Colors.white),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                          ),
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: const Text(
-                        "Buy",
-                        style: TextStyle(
-                          fontFamily: "Poppins",
-                          fontSize: 20,
-                        ),
+                    GooglePayButton(
+                      paymentConfigurationAsset: 'gpay.json',
+                      paymentItems: paymentItems,
+                      type: GooglePayButtonType.pay,
+                      margin: const EdgeInsets.only(top: 15.0),
+                      onPaymentResult: (data) {
+                        print(data);
+                      },
+                      loadingIndicator: const Center(
+                        child: CircularProgressIndicator(),
                       ),
                     ),
                   ],
